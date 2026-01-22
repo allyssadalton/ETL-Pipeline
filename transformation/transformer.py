@@ -1,5 +1,22 @@
-from datetime import datetime
+from datetime import datetime, UTC
 from typing import List, Dict
+
+
+def convert_format_string(fmt: str) -> str:
+    # If already in Python format, return as-is
+    if "%" in fmt:
+        return fmt
+    
+    fmt = fmt.replace("YYYY", "%Y")
+    fmt = fmt.replace("YY", "%y")
+    fmt = fmt.replace("MM", "%m")
+    fmt = fmt.replace("DD", "%d")
+    fmt = fmt.replace("M", "%-m")  # Single M for non-padded month
+    fmt = fmt.replace("D", "%-d")  # Single D for non-padded day
+    # Clean up double replacements
+    fmt = fmt.replace("%-m%-m", "%m")
+    fmt = fmt.replace("%-d%-d", "%d")
+    return fmt
 
 
 def apply_mapping(record: Dict, mapping: Dict) -> Dict:
@@ -41,10 +58,20 @@ def normalize_date(record: Dict, client_config: Dict) -> Dict:
 
     if "open_date" in record:
         raw_date = record.get("open_date")
+        for fmt in date_formats:
+            try:
+                # Convert format string to Python strptime format
+                python_fmt = convert_format_string(fmt)
+                parsed = datetime.strptime(raw_date, python_fmt)
+                record["open_date"] = parsed.strftime("%Y-%m-%d")
+                return record
+            except ValueError:
+                continue
 
-        # TODO: Implement conversion from any allowed format to ISO
-        # Hint: use datetime.strptime and datetime.strftime
-        # If conversion fails, leave the raw value or set to None
+        # if conversion fails
+        record["open_date"] = None
+        return record
+
 
     return record
 
@@ -55,7 +82,7 @@ def add_metadata(record: Dict, client_config: Dict, ingestion_id: str) -> Dict:
     """
     record["client_id"] = client_config["client_id"]
     record["ingestion_id"] = ingestion_id
-    record["ingestion_timestamp"] = datetime.utcnow().isoformat()
+    record["ingestion_timestamp"] = datetime.now(UTC).isoformat()
 
     return record
 
