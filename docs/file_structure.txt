@@ -1,0 +1,63 @@
+lender-data-platform/
+│
+├── README.md
+│
+├── config/                     # Configuration (no logic)
+│   ├── clients/
+│   │   ├── lender_a.json
+│   │   ├── lender_b.json
+│   │   └── lender_c.json
+│   │
+│   ├── schemas/
+│   │   └── loan_schema.json
+│   │
+│   └── mappings/
+│       ├── lender_a_mapping.json
+│       └── lender_b_mapping.json
+│
+├── data/
+│   ├── raw/                    # Original client files (immutable)
+│   │   ├── lender_a/
+│   │   └── lender_b/
+│   │
+│   ├── processed/              # Clean, transformed output
+│   │   └── loans_clean.csv
+│   │
+│   └── rejected/               # Rows that failed validation
+│       └── loans_error.csv
+│
+├── ingestion/
+│   └── ingest.py               # Entry point (CLI)
+│
+├── validation/
+│   ├── validator.py
+│   └── rules.py
+│
+├── transformation/
+│   └── transformer.py
+│
+├── storage/
+│   ├── database.py
+│   └── models.py
+│
+├── analytics/
+│   ├── quality_metrics.py
+│   └── reporting.py
+│
+├── dashboard/
+│   └── app.py                  # Streamlit or Flask app
+│
+├── logs/
+│   ├── ingestion.log
+│   └── error.log
+│
+├── tests/
+│   ├── test_validation.py
+│   └── test_transformation.py
+│
+├── scripts/
+│   └── run_ingestion.sh
+│
+├── requirements.txt
+│
+└── .gitignore
