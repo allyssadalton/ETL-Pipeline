@@ -1,0 +1,51 @@
+{
+  "schema_name": "standard_loan_schema",
+  "description": "Canonical schema for standardized lender loan data after ingestion and transformation",
+  "version": "1.0",
+  "fields": {
+    "loan_id": {
+      "type": "string",
+      "required": true,
+      "description": "Unique identifier for the loan provided by the lender"
+    },
+    "borrower_name": {
+      "type": "string",
+      "required": true,
+      "description": "Full name of the primary borrower"
+    },
+    "loan_amount": {
+      "type": "number",
+      "required": true,
+      "min": 0,
+      "description": "Original loan amount in USD"
+    },
+    "loan_status": {
+      "type": "string",
+      "required": true,
+      "allowed_values": ["ACTIVE", "CLOSED", "DELINQUENT", "PAID_OFF"],
+      "description": "Current status of the loan"
+    },
+    "open_date": {
+      "type": "date",
+      "required": true,
+      "format": "YYYY-MM-DD",
+      "description": "Date the loan was opened"
+    },
+    "client_id": {
+      "type": "string",
+      "required": true,
+      "description": "Identifier of the lender or client source"
+    },
+    "ingestion_id": {
+      "type": "string",
+      "required": true,
+      "description": "Unique identifier for the ingestion batch"
+    },
+    "ingestion_timestamp": {
+      "type": "datetime",
+      "required": true,
+      "format": "ISO-8601",
+      "description": "Timestamp when the record was ingested"
+    }
+  }
+}
