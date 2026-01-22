@@ -1,0 +1,6 @@
+loan_id,borrower_name,loan_amount,loan_status,open_date
+A1001,John Doe,15000,ACTIVE,2024-05-01
+A1002,Jane Smith,25000,CLOSED,2023-12-15
+A1003,Bob Johnson,18000,DELINQUENT,2024-01-22
+A1004,Alice Brown,30000,PAID_OFF,2022-11-30
+A1005,Chris Evans,5000,ACTIVE,2024-02-14
