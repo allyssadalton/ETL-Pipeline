@@ -3,6 +3,7 @@ import json
 import os
 import sys
 from datetime import datetime
+from validation.validator import validate_records
 
 import pandas as pd
 
