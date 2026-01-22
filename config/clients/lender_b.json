@@ -1,0 +1,32 @@
+{
+  "client_id": "LENDER_B",
+  "client_name": "Lender B Financial",
+  "description": "Loan data feed from Lender B in CSV format",
+  "file_format": "csv",
+  "delimiter": ",",
+  "has_header": true,
+  "encoding": "utf-8",
+
+  "date_formats": [
+    "MM/DD/YYYY",
+    "M/D/YYYY"
+  ],
+
+  "status_code_mapping": {
+    "open": "ACTIVE",
+    "closed": "CLOSED",
+    "late": "DELINQUENT",
+    "paid_off": "PAID_OFF"
+  },
+
+  "ingestion_settings": {
+    "allow_partial_records": false,
+    "reject_on_schema_mismatch": true,
+    "max_error_percentage": 10
+  },
+
+  "contact": {
+    "team": "Data Operations",
+    "email": "dataops@lenderb.example"
+  }
+}

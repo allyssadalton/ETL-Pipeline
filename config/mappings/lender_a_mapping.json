@@ -1,0 +1,11 @@
+{
+  "client_name": "lender_a",
+  "file_type": "csv",
+  "mapping": {
+    "loan_id": "loan_id",
+    "borrower_name": "borrower_name",
+    "loan_amount": "loan_amount",
+    "loan_status": "loan_status",
+    "open_date": "open_date"
+  }
+}

@@ -8,6 +8,7 @@
   "encoding": "utf-8",
 
   "date_formats": [
+    "YYYY-MM-DD",
     "MM/DD/YYYY",
     "M/D/YYYY"
   ],
