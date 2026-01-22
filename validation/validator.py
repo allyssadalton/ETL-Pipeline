@@ -37,10 +37,11 @@ def validate_record(
                     errors.append(error)
 
             if field_rules["type"] == "date":
+                # After transformation, dates are in ISO format (YYYY-MM-DD)
                 valid, error = rules.valid_date(
                     value,
                     field_name,
-                    client_config.get("date_formats", [])
+                    ["%Y-%m-%d"]  # Check for ISO format after transformation
                 )
                 if not valid:
                     errors.append(error)
