@@ -1,6 +1,6 @@
-id,full_name,amount,status,opened_on,loan_type,notes
-B-1001,Michael Jordan,12000,open,01/15/2024,personal,"First-time borrower"
-B-1002,Serena Williams,45000,closed,11/02/2023,mortgage,"Paid off early"
-B-1003,LeBron James,32000,late,09/20/2023,auto,"Late payment recorded"
-B-1004,Simone Biles,15000,paid_off,06/11/2022,personal,"Excellent credit history"
-B-1005,Tom Brady,8000,open,12/31/2023,personal,"Refinanced once"
+id,full_name,amount,balance,interest_rate,loan_type,purpose,term,payment,credit_score,status,days_late,opened_on,closed_on,last_payment
+B-1001,Michael Jordan,12000,11200,5.99,personal,Home Improvement,48,276.50,715,open,0,01/15/2024,,02/09/2026
+B-1002,Serena Williams,45000,0,4.25,mortgage,Primary Residence,360,221.37,795,closed,0,11/02/2023,01/22/2026,01/22/2026
+B-1003,LeBron James,32000,28800,6.49,auto,Vehicle Purchase,60,610.25,685,late,30,09/20/2023,,01/10/2026
+B-1004,Simone Biles,15000,0,3.75,personal,Education,36,422.16,810,paid_off,0,06/11/2022,06/11/2025,06/11/2025
+B-1005,Tom Brady,8000,7200,5.50,personal,Vacation,24,335.50,740,open,0,12/31/2023,,02/09/2026

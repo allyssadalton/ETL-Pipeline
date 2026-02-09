@@ -5,7 +5,17 @@
     "loan_id": "loan_id",
     "borrower_name": "borrower_name",
     "loan_amount": "loan_amount",
+    "outstanding_balance": "outstanding_balance",
+    "interest_rate": "interest_rate",
+    "loan_type": "loan_type",
+    "purpose": "purpose",
+    "term_months": "term_months",
+    "monthly_payment": "monthly_payment",
+    "credit_score": "credit_score",
     "loan_status": "loan_status",
-    "open_date": "open_date"
+    "days_past_due": "days_past_due",
+    "open_date": "open_date",
+    "close_date": "close_date",
+    "last_payment_date": "last_payment_date"
   }
 }

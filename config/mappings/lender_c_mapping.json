@@ -1,0 +1,21 @@
+{
+  "client_name": "lender_c",
+  "file_type": "csv",
+  "mapping": {
+    "loan_ref": "loan_id",
+    "borrower": "borrower_name",
+    "principal": "loan_amount",
+    "remaining_balance": "outstanding_balance",
+    "annual_rate": "interest_rate",
+    "product_type": "loan_type",
+    "loan_purpose": "purpose",
+    "months_remaining": "term_months",
+    "monthly_installment": "monthly_payment",
+    "fico_score": "credit_score",
+    "account_status": "loan_status",
+    "delinquency_days": "days_past_due",
+    "origination_date": "open_date",
+    "payoff_date": "close_date",
+    "most_recent_payment": "last_payment_date"
+  }
+}

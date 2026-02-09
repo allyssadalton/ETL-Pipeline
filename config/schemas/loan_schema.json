@@ -1,7 +1,7 @@
 {
   "schema_name": "standard_loan_schema",
   "description": "Canonical schema for standardized lender loan data after ingestion and transformation",
-  "version": "1.0",
+  "version": "2.0",
   "fields": {
     "loan_id": {
       "type": "string",
@@ -19,17 +19,77 @@
       "min": 0,
       "description": "Original loan amount in USD"
     },
+    "outstanding_balance": {
+      "type": "number",
+      "required": false,
+      "min": 0,
+      "description": "Current outstanding balance on the loan in USD"
+    },
+    "interest_rate": {
+      "type": "number",
+      "required": false,
+      "min": 0,
+      "description": "Annual interest rate as a percentage"
+    },
+    "loan_type": {
+      "type": "string",
+      "required": false,
+      "allowed_values": ["personal", "mortgage", "auto", "student", "business", "other"],
+      "description": "Type of loan"
+    },
+    "purpose": {
+      "type": "string",
+      "required": false,
+      "description": "Purpose or reason for the loan"
+    },
+    "term_months": {
+      "type": "integer",
+      "required": false,
+      "min": 1,
+      "description": "Loan term in months"
+    },
+    "monthly_payment": {
+      "type": "number",
+      "required": false,
+      "min": 0,
+      "description": "Monthly payment amount in USD"
+    },
+    "credit_score": {
+      "type": "integer",
+      "required": false,
+      "min": 300,
+      "max": 850,
+      "description": "Borrower credit score at origination"
+    },
     "loan_status": {
       "type": "string",
       "required": true,
       "allowed_values": ["ACTIVE", "CLOSED", "DELINQUENT", "PAID_OFF"],
       "description": "Current status of the loan"
     },
+    "days_past_due": {
+      "type": "integer",
+      "required": false,
+      "min": 0,
+      "description": "Number of days the loan is past due, if applicable"
+    },
     "open_date": {
       "type": "date",
       "required": true,
       "format": "YYYY-MM-DD",
       "description": "Date the loan was opened"
+    },
+    "close_date": {
+      "type": "date",
+      "required": false,
+      "format": "YYYY-MM-DD",
+      "description": "Date the loan was closed, if applicable"
+    },
+    "last_payment_date": {
+      "type": "date",
+      "required": false,
+      "format": "YYYY-MM-DD",
+      "description": "Date of the last payment made on the loan"
     },
     "client_id": {
       "type": "string",

@@ -1,6 +1,51 @@
-loan_id,borrower_name,loan_amount,loan_status,open_date
-A1001,John Doe,15000,ACTIVE,2024-05-01
-A1002,Jane Smith,25000,CLOSED,2023-12-15
-A1003,Bob Johnson,18000,DELINQUENT,2024-01-22
-A1004,Alice Brown,30000,PAID_OFF,2022-11-30
-A1005,Chris Evans,5000,ACTIVE,2024-02-14
+loan_id,borrower_name,loan_amount,outstanding_balance,interest_rate,loan_type,purpose,term_months,monthly_payment,credit_score,loan_status,days_past_due,open_date,close_date,last_payment_date
+A1001,John Doe,15000,12500,5.25,personal,Debt Consolidation,60,265.50,720,ACTIVE,0,2024-05-01,,2026-02-09
+A1002,Jane Smith,25000,0,4.50,mortgage,Home Purchase,360,126.51,780,CLOSED,,2023-12-15,2026-01-15,2026-01-15
+A1003,Bob Johnson,18000,14500,6.75,auto,Vehicle Purchase,48,397.25,650,DELINQUENT,45,2024-01-22,,2025-12-15
+A1004,Alice Brown,30000,0,3.99,mortgage,Home Refinance,240,147.52,800,PAID_OFF,,2022-11-30,2024-11-30,2024-11-30
+A1005,Chris Evans,5000,4200,7.50,personal,Medical Expenses,36,150.85,680,ACTIVE,0,2024-02-14,,2026-02-09
+A1006,Diana Williams,50000,38500,4.75,mortgage,Commercial Property,300,267.30,785,ACTIVE,0,2021-03-10,,2026-02-08
+A1007,Edward Martinez,12000,0,5.99,personal,Home Improvement,48,271.85,710,PAID_OFF,,2021-11-20,2025-11-20,2025-11-20
+A1008,Fiona Davis,22000,18500,6.25,auto,Business Vehicle,60,420.35,695,ACTIVE,0,2023-08-15,,2026-02-09
+A1009,George Wilson,35000,28900,5.50,personal,Education Loan,84,485.20,760,ACTIVE,0,2022-05-22,,2026-02-07
+A1010,Hannah Taylor,8500,2100,8.25,personal,Wedding Expenses,24,372.55,660,ACTIVE,15,2025-02-01,,2026-01-20
+A1011,Ian Anderson,45000,0,4.25,mortgage,Investment Property,240,220.18,800,CLOSED,,2022-01-15,2026-01-15,2026-01-15
+A1012,Julia Thomas,19000,16200,6.49,auto,Car Purchase,48,434.82,675,ACTIVE,0,2023-10-30,,2026-02-09
+A1013,Kevin Lee,28000,24500,5.75,personal,Startup Capital,60,531.45,750,ACTIVE,0,2023-11-05,,2026-02-08
+A1014,Lisa White,7500,6000,9.00,personal,Emergency Fund,24,334.20,630,DELINQUENT,60,2024-09-15,,2025-11-15
+A1015,Michael Brown,55000,45600,4.99,mortgage,Primary Residence,360,295.42,820,ACTIVE,0,2020-07-01,,2026-02-09
+A1016,Nancy Green,11000,0,5.49,personal,Travel Loan,36,318.75,700,CLOSED,,2021-12-10,2024-12-10,2024-12-10
+A1017,Oscar Garcia,38000,33200,5.99,auto,Commercial Fleet,72,588.95,740,ACTIVE,0,2022-04-18,,2026-02-09
+A1018,Patricia Rodriguez,16000,13500,6.75,personal,Business Expansion,48,389.25,680,ACTIVE,0,2023-12-01,,2026-02-08
+A1019,Quincy Nelson,42000,35700,5.25,personal,Real Estate Investment,84,585.30,770,ACTIVE,0,2022-09-12,,2026-02-07
+A1020,Rachel Miller,9000,5400,7.99,personal,Debt Repayment,36,275.85,665,ACTIVE,30,2024-11-15,,2026-01-20
+A1021,Samuel Johnson,27000,22500,5.45,auto,Truck Purchase,60,510.25,705,ACTIVE,0,2023-06-20,,2026-02-09
+A1022,Tina Lopez,14000,12100,6.99,personal,Furniture Purchase,48,336.45,655,ACTIVE,0,2024-01-10,,2026-02-08
+A1023,Ulysses Clark,65000,58500,4.15,mortgage,Commercial Loan,240,324.78,810,ACTIVE,0,2021-10-05,,2026-02-09
+A1024,Victoria Martin,20000,16800,6.25,personal,Equipment Purchase,60,385.50,690,ACTIVE,0,2023-09-12,,2026-02-09
+A1025,Walter Thompson,33000,0,5.75,personal,Renovation Project,48,756.85,745,CLOSED,,2022-02-18,2026-02-18,2026-02-18
+A1026,Xavier Young,11500,9500,7.25,personal,Photography Equipment,36,357.20,670,ACTIVE,0,2024-04-01,,2026-02-08
+A1027,Yolanda Harris,48000,42000,4.95,mortgage,Farm Property,240,253.42,805,ACTIVE,0,2021-08-15,,2026-02-09
+A1028,Zachary Moore,13000,11200,6.49,auto,Motorcycle Purchase,36,381.95,680,ACTIVE,0,2024-03-22,,2026-02-08
+A1029,Alice Johnson,26000,21500,5.85,personal,Medical Training,84,399.75,735,ACTIVE,0,2022-12-10,,2026-02-08
+A1030,Benjamin Davis,19000,17200,6.75,auto,Commercial Truck,60,361.25,685,ACTIVE,0,2023-07-30,,2026-02-09
+A1031,Catherine Wilson,36000,32400,5.35,personal,Business Startup,60,699.50,760,ACTIVE,0,2023-10-15,,2026-02-08
+A1032,David Garcia,8000,6400,8.50,personal,Home Appliances,24,349.65,640,DELINQUENT,30,2025-02-09,,2026-01-09
+A1033,Elena Rodriguez,52000,47000,4.45,mortgage,Vacation Home,300,280.50,795,ACTIVE,0,2020-11-01,,2026-02-09
+A1034,Francisco Martinez,15000,12750,6.15,personal,Tuition Payment,48,354.25,710,ACTIVE,0,2024-02-28,,2026-02-08
+A1035,Grace Williams,40000,35600,5.65,personal,Investment Capital,84,595.30,775,ACTIVE,0,2022-08-22,,2026-02-07
+A1036,Henry Taylor,10000,0,5.99,personal,Small Business,36,291.50,700,CLOSED,,2023-02-15,2026-02-15,2026-02-15
+A1037,Iris Anderson,31000,27900,5.45,auto,Construction Vehicle,72,527.85,715,ACTIVE,0,2021-09-10,,2026-02-09
+A1038,Jerome Smith,17000,14450,6.85,personal,Home Office Setup,48,398.50,665,ACTIVE,0,2024-01-20,,2026-02-08
+A1039,Karen White,44000,38500,5.15,personal,Professional Development,60,850.25,780,ACTIVE,0,2023-05-15,,2026-02-08
+A1040,Lawrence Brown,29000,25650,5.75,auto,Fleet Purchase,60,550.75,720,ACTIVE,0,2023-07-20,,2026-02-09
+A1041,Melissa Davis,12000,0,4.99,personal,Spring Vacation,24,502.85,750,CLOSED,,2024-02-15,2026-02-15,2026-02-15
+A1042,Nicholas Garcia,23000,20700,6.35,personal,Kitchen Renovation,48,538.45,700,ACTIVE,0,2024-03-10,,2026-02-08
+A1043,Olivia Martinez,60000,54000,4.35,mortgage,Estate Property,360,305.20,820,ACTIVE,0,2019-06-01,,2026-02-09
+A1044,Peter Johnson,13000,11700,7.15,personal,Debt Management,36,382.65,655,ACTIVE,30,2024-10-15,,2026-01-15
+A1045,Quinn Williams,37000,33300,5.55,auto,Business Fleet,72,653.45,740,ACTIVE,0,2021-12-20,,2026-02-09
+A1046,Rebecca Lee,19000,16150,6.45,personal,Consulting Services,48,445.75,685,ACTIVE,0,2024-02-01,,2026-02-09
+A1047,Samuel Clark,32000,28800,5.95,personal,Research Project,60,619.50,765,ACTIVE,0,2023-06-05,,2026-02-08
+A1048,Tanya Brown,9500,8075,8.15,personal,Medical Procedure,24,431.25,650,ACTIVE,15,2025-02-15,,2026-01-15
+A1049,Ulrich Nelson,47000,42300,4.75,mortgage,Mountain Resort,240,253.85,815,ACTIVE,0,2021-05-10,,2026-02-09
+A1050,Vivian Harper,21000,18900,6.05,personal,Art Studio Launch,48,494.70,720,ACTIVE,0,2024-01-15,,2026-02-08
