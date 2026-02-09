@@ -1,8 +1,9 @@
 from datetime import datetime
+import math
 
 
 def required_field(value, field_name):
-    if value is None or value == "":
+    if value is None or value == "" or (isinstance(value, float) and math.isnan(value)):
         return False, f"Missing required field: {field_name}"
     return True, None
 
@@ -31,9 +32,16 @@ def allowed_values(value, field_name, allowed):
 
 
 def valid_date(value, field_name, date_formats):
+    # Handle NaN and None values (acceptable for non-required date fields)
+    if value is None or (isinstance(value, float) and math.isnan(value)):
+        return True, None
+    
+    # Convert to string if needed
+    value_str = str(value) if not isinstance(value, str) else value
+    
     for fmt in date_formats:
         try:
-            datetime.strptime(value, fmt)
+            datetime.strptime(value_str, fmt)
             return True, None
         except ValueError:
             continue

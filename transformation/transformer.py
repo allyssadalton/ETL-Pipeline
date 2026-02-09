@@ -1,5 +1,6 @@
 from datetime import datetime, UTC
 from typing import List, Dict
+import math
 
 
 def convert_format_string(fmt: str) -> str:
@@ -17,6 +18,21 @@ def convert_format_string(fmt: str) -> str:
     fmt = fmt.replace("%-m%-m", "%m")
     fmt = fmt.replace("%-d%-d", "%d")
     return fmt
+
+
+def clean_record(record: Dict) -> Dict:
+    """
+    Convert NaN values to None for proper handling downstream.
+    """
+    cleaned = {}
+    for key, value in record.items():
+        if isinstance(value, float) and math.isnan(value):
+            cleaned[key] = None
+        elif value == "":
+            cleaned[key] = None
+        else:
+            cleaned[key] = value
+    return cleaned
 
 
 def apply_mapping(record: Dict, mapping: Dict) -> Dict:
@@ -99,6 +115,9 @@ def transform_records(
     transformed_records = []
 
     for record in records:
+        # 0) clean NaN values
+        record = clean_record(record)
+        
         # 1) rename fields
         record = apply_mapping(record, mapping)
 
