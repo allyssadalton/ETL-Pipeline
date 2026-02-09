@@ -4,6 +4,10 @@ import logging
 import os
 import sys
 from datetime import datetime, UTC
+
+# Add the workspace root to the Python path
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 from validation.validator import validate_records
 from transformation.transformer import transform_records
 from analytics.quality_metrics import compute_quality_metrics, print_quality_report
