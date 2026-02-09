@@ -98,6 +98,29 @@ def read_input_file(file_path: str, client_config: dict) -> pd.DataFrame:
     raise ValueError(f"Unsupported file format: {file_format}")
 
 
+def export_to_csv(clean_records: list, rejected_records: list, logger: logging.Logger):
+    """
+    Export clean and rejected records to CSV files.
+    """
+    # Create output directories if they don't exist
+    os.makedirs("data/processed", exist_ok=True)
+    os.makedirs("data/rejected", exist_ok=True)
+    
+    # Export clean records
+    if clean_records:
+        clean_df = pd.DataFrame(clean_records)
+        clean_path = "data/processed/loans_clean.csv"
+        clean_df.to_csv(clean_path, index=False)
+        logger.info(f"Exported clean records to {clean_path}")
+    
+    # Export rejected records
+    if rejected_records:
+        rejected_df = pd.DataFrame(rejected_records)
+        rejected_path = "data/rejected/loans_error.csv"
+        rejected_df.to_csv(rejected_path, index=False)
+        logger.info(f"Exported rejected records to {rejected_path}")
+
+
 def main():
     parser = argparse.ArgumentParser(
         description="Lender Data Ingestion Pipeline"
@@ -157,6 +180,7 @@ def main():
         create_tables()
         insert_clean_records(clean_records)
         insert_rejected_records(rejected_records)
+        export_to_csv(clean_records, rejected_records, logger)
 
         logger.info(f"Clean records: {len(clean_records)}")
         logger.info(f"Rejected records: {len(rejected_records)}")
